@@ -27,8 +27,8 @@ export default function Welcome() {
             </View>
 
             <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Encontre: Profissionais e  Clientes! </Text>
-                      <Text style={styles.text}>Faça o login para começar</Text>
+                <Text style={styles.title}>Profissionais e  Clientes! </Text>
+                      <Text style={styles.text}>App Freelancer</Text>
                 
                 <TouchableOpacity 
                 style={styles.button}
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     },
     containerLogo:{
         flex:2,
-        backgroundColor: '#38a69d',
+        backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center'
     },

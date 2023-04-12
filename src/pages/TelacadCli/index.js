@@ -75,7 +75,7 @@ export default function TelacadCli() {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor: '#38a69d'
+        backgroundColor: '#FFFFFF'
 
     },
     containerHeader:{
