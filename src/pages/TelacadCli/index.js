@@ -7,18 +7,17 @@ import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Telacad() {
+export default function TelacadCli() {
     const navigation = useNavigation();
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [address, setAddress] = useState("");
 	const [age, setAge] = useState("");
-	const [profession, setProfession] = useState("");
-	const [experience, setExperience] = useState("");
+	
 
 	const handleRegister = () => {
 		console.log(
-			`Name: ${name}, Phone: ${phone}, Address: ${address}, Age: ${age}, Profession: ${profession}, Experience: ${experience}`
+			`Name: ${name}, Phone: ${phone}, Address: ${address}, Age: ${age}`
 		);
 		// Coloque aqui o seu código de registro
 	};
@@ -61,23 +60,7 @@ export default function Telacad() {
 				onChangeText={(text) => setAge(text)}
 			/>
 
-			<TextInput
-				style={styles.input}
-				placeholder="Profissão"
-				autoCapitalize="words"
-				value={profession}
-				onChangeText={(text) => setProfession(text)}
-			/>
-
-			<TextInput
-				style={styles.input}
-				placeholder="Experiência Profissional"
-				autoCapitalize="sentences"
-				multiline
-				value={experience}
-				onChangeText={(text) => setExperience(text)}
-			/>
-
+			
 			<TouchableOpacity 
 			style={styles.button}
 			onPress={() => navigation.navigate('SignIn')}

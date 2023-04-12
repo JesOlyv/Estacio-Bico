@@ -5,54 +5,37 @@ import * as Animatable from 'react-native-animatable'
 
 import { useNavigation } from '@react-navigation/native';
 
-export default function SignIn() {
+export default function TelaInicialCli() {
     const navigation = useNavigation();
     return(
         <View style={styles.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}> 
-                <Text style={styles.message}>Bem-vindo(a)</Text>
+                <Text style={styles.message}>Seu perfil</Text>
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Email</Text>
+                <Text style={styles.title}>escolha seu profissional</Text>
                 <TextInput
-                placeholder="Digite um email..."
+                placeholder="Digite um texto..."
                 style={styles.input}
                 />
 
-<Text style={styles.title}>Senha</Text>
+<Text style={styles.title}>Avaliação</Text>
                 <TextInput
-                placeholder="Sua senha"
+                placeholder="suas experiencias profissionais"
                 style={styles.input}
                 />
 
 <TouchableOpacity 
                 style={styles.button}
-                onPress={() => navigation.navigate('Telacad')}
+                onPress={() => navigation.navigate()}
                 >
-                    <Text style={styles.buttonText}>Não possui uma conta-Profissional?Cadastre-se</Text>
-                </TouchableOpacity>
-                
-                <TouchableOpacity 
-                style={styles.button}
-                onPress={() => navigation.navigate('TelacadCli')}
-                >
-                    <Text style={styles.buttonText}>Não possui uma conta-Cliente? Cadastre-se</Text>
+                    <Text style={styles.buttonText}>Avalie seu profissional</Text>
                 </TouchableOpacity>
 
 
-<TouchableOpacity 
-style={styles.button}
-   onPress={() => navigation.navigate('TelaInicial')}
-   >
-    <Text style={styles.buttonText}>Acessar Profissional</Text>
-</TouchableOpacity>
-
-<TouchableOpacity 
-style={styles.button}
-   onPress={() => navigation.navigate('TelaInicialCli')}
-   >
-    <Text style={styles.buttonText}>Acessar Cliente</Text>
+<TouchableOpacity style={styles.buttonRegister}>
+    <Text style={styles.registerText}></Text>
 </TouchableOpacity>
 
 
