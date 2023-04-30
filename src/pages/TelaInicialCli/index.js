@@ -1,49 +1,80 @@
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-
+import React, { useState } from 'react';
+import { View, Text, StyleSheet,FlatList, TextInput, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 
 import { useNavigation } from '@react-navigation/native';
 
-export default function TelaInicialCli() {
-    const navigation = useNavigation();
-    return(
-        <View style={styles.container}>
-            <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}> 
-                <Text style={styles.message}>Seu perfil</Text>
-            </Animatable.View>
+const OPTIONS = [
+  { id: '1', title: 'Pedreiro' },
+  { id: '2', title: 'Gesseiro' },
+  { id: '3', title: 'Ladrilheiro' },
+  { id: '4', title: 'Diarista' },
+  { id: '5', title: 'Marido de aluguel' },
+];
 
-            <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>escolha seu profissional</Text>
-                <TextInput
-                placeholder="Digite um texto..."
-                style={styles.input}
-                />
+const Menu = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
 
-<Text style={styles.title}>Avaliação</Text>
-                <TextInput
-                placeholder="suas experiencias profissionais"
-                style={styles.input}
-                />
+  const handleOptionPress = (optionId) => {
+    setSelectedOption(optionId);
+  };
+
+  const renderOption = ({ item }) => (
+    <TouchableOpacity
+      onPress={() => handleOptionPress(item.id)}
+      style={{ padding: 10, backgroundColor: selectedOption === item.id ? 'gray' : 'white' }}
+    >
+      <Text style={{ fontSize: 16 }}>{item.title}</Text>
+    </TouchableOpacity>
+  );
+
+  return (
+    
+    <View style={{ flex: 1 }}>
+      <FlatList
+        data={OPTIONS}
+        renderItem={renderOption}
+        keyExtractor={(item) => item.id}
+      />
+    
+    <Animatable.View animation="fadeInUp" style={styles.containerForm}>
+        <Text style={styles.title}>Após a escolha do seu profissional:</Text>
+        <TextInput
+        placeholder="Descreva sobre o  serviço que será realizado!"
+        style={styles.input}
+        />
+
+
 
 <TouchableOpacity 
-                style={styles.button}
-                onPress={() => navigation.navigate()}
-                >
-                    <Text style={styles.buttonText}>Avalie seu profissional</Text>
-                </TouchableOpacity>
+        style={styles.button}
+        onPress={() => navigation.navigate()}
+        >
+            <Text style={styles.buttonText}>Envie para o profissional</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate()}
+        >
+            <Text style={styles.buttonText}>Avalie o serviço prestado</Text>
+        </TouchableOpacity>
 
 
 <TouchableOpacity style={styles.buttonRegister}>
-    <Text style={styles.registerText}></Text>
+<Text style={styles.registerText}>Acompanhe seu serviço/Histórico de contratação</Text>
+</TouchableOpacity>
+<TouchableOpacity style={styles.buttonRegister}>
+<Text style={styles.registerText}>Veja seu Perfil/Avaliações</Text>
 </TouchableOpacity>
 
 
-            </Animatable.View>
-            
-        </View>
-    );
-} 
+
+    </Animatable.View>
+    
+</View>
+  );
+
+};
 const styles = StyleSheet.create({
     container:{
         flex:1,
@@ -51,13 +82,13 @@ const styles = StyleSheet.create({
 
     },
     containerHeader:{
-        marginTop: '14%',
+        marginTop: '10%',
         marginBottom:'8%',
         paddingStart: '5%',
 
     },
     message:{
-        fontSize: 28,
+        fontSize: 15,
         fontWeight: 'bold',
         color: '#FFF'
     },
@@ -101,3 +132,5 @@ const styles = StyleSheet.create({
         color: '#a1a1a1'
     }
 })
+
+export default Menu;
