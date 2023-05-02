@@ -53,21 +53,18 @@ export default function TelaInicial() {
                    
                 </TouchableOpacity>
                 <TouchableOpacity 
-                style={styles.button}
-                onPress={() => navigation.navigate()}
-                >
-                    <Text style={styles.buttonText}>Veja as suas avaliações/Avalie seus clientes</Text>
-                                    
-                                   </TouchableOpacity>
-                <Text style={styles.buttonText}>Visualize o seu perfil!</Text>
+               style={styles.buttonRegister}>
+              <Text style={styles.registerText}>Perfil público</Text>
+              </TouchableOpacity>
+              
+              
                 <TouchableOpacity 
-                style={styles.button}
-                onPress={() => navigation.navigate()}
-                >
-                    <Text style={styles.buttonText}>Visualize o seu Perfil!</Text>
-                                  
-                </TouchableOpacity>
-
+               style={styles.buttonRegister}>
+              <Text style={styles.registerText}>Avaliações</Text>
+              </TouchableOpacity>               
+                                     
+                    
+               
 <TouchableOpacity style={styles.buttonRegister}>
     <Text style={styles.registerText}></Text>
 </TouchableOpacity>
@@ -138,6 +135,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     registerText:{
-        color: '#a1a1a1'
+        color: '#38a69d'
     }
 })

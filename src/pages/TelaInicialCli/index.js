@@ -22,7 +22,7 @@ const Menu = () => {
   const renderOption = ({ item }) => (
     <TouchableOpacity
       onPress={() => handleOptionPress(item.id)}
-      style={{ padding: 10, backgroundColor: selectedOption === item.id ? 'gray' : 'white' }}
+      style={{ padding: 10, backgroundColor: selectedOption === item.id ? '#38a69d' : 'white' }}
     >
       <Text style={{ fontSize: 16 }}>{item.title}</Text>
     </TouchableOpacity>
@@ -64,7 +64,7 @@ const Menu = () => {
 <Text style={styles.registerText}>Acompanhe seu serviço/Histórico de contratação</Text>
 </TouchableOpacity>
 <TouchableOpacity style={styles.buttonRegister}>
-<Text style={styles.registerText}>Veja seu Perfil/Avaliações</Text>
+<Text style={styles.registerText}>Veja seu Perfil público/Suas avaliações</Text>
 </TouchableOpacity>
 
 
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     registerText:{
-        color: '#a1a1a1'
+        color: '#38a69d'
     }
 })
 

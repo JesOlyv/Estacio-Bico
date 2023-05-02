@@ -7,6 +7,7 @@ import TelacadCli from '../pages/TelacadCli'
 import TelaInicial from '../pages/TelaInicial'
 import TelaInicialCli from '../pages/TelaInicialCli'
 
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes(){
@@ -44,6 +45,8 @@ export default function Routes(){
             component={TelaInicialCli}
             options={{ headerShown: false}}
             />
+           
+          
         </Stack.Navigator>
     )
 }
