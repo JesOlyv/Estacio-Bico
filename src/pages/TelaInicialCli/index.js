@@ -8,8 +8,8 @@ const OPTIONS = [
   { id: '1', title: 'Pedreiro' },
   { id: '2', title: 'Gesseiro' },
   { id: '3', title: 'Ladrilheiro' },
-  { id: '4', title: 'Diarista' },
-  { id: '5', title: 'Marido de aluguel' },
+  { id: '4', title: 'Pintor' },
+  { id: '5', title: 'Armador' },
 ];
 
 const Menu = () => {
@@ -52,20 +52,14 @@ const Menu = () => {
         >
             <Text style={styles.buttonText}>Envie para o profissional</Text>
         </TouchableOpacity>
+        
         <TouchableOpacity 
         style={styles.button}
         onPress={() => navigation.navigate()}
         >
-            <Text style={styles.buttonText}>Avalie o serviço prestado</Text>
+            <Text style={styles.buttonText}>Contratações</Text>
         </TouchableOpacity>
-
-
-<TouchableOpacity style={styles.buttonRegister}>
-<Text style={styles.registerText}>Acompanhe seu serviço/Histórico de contratação</Text>
-</TouchableOpacity>
-<TouchableOpacity style={styles.buttonRegister}>
-<Text style={styles.registerText}>Veja seu Perfil público/Suas avaliações</Text>
-</TouchableOpacity>
+        
 
 
 

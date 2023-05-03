@@ -39,7 +39,7 @@ export default function TelaInicial() {
                 style={styles.button}
                 onPress={() => navigation.navigate()}
                 >
-                    <Text style={styles.buttonText}>Verificar a solicitação de serviços/Consultar serviços em andamento</Text>
+                    <Text style={styles.buttonText}>Verificar a solicitação de serviços</Text>
                                     
                 </TouchableOpacity>
                 
@@ -48,27 +48,16 @@ export default function TelaInicial() {
                 style={styles.button}
                 onPress={() => navigation.navigate()}
                 >
-                    <Text style={styles.buttonText}>Poste fotos e vídeos dos seus serviços</Text>
+                    <Text style={styles.buttonText}>Histórico de serviços</Text>
                  
                    
                 </TouchableOpacity>
-                <TouchableOpacity 
-               style={styles.buttonRegister}>
-              <Text style={styles.registerText}>Perfil público</Text>
-              </TouchableOpacity>
               
               
-                <TouchableOpacity 
-               style={styles.buttonRegister}>
-              <Text style={styles.registerText}>Avaliações</Text>
-              </TouchableOpacity>               
+                           
                                      
                     
-               
-<TouchableOpacity style={styles.buttonRegister}>
-    <Text style={styles.registerText}></Text>
-</TouchableOpacity>
-
+ 
 
             </Animatable.View>
             
