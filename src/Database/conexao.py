@@ -4,7 +4,7 @@ conexao = conector.connect("appbico.db")
 
 conexao = conexao.cursor()
 
-comando1 = " CREATE TABLE tblUsers (codUser INTERGER NOT NULL, name TEXT NOT NULL, phone INTERGER, address TEXT NOT NULL, email TEXT NOT NULL, age INTERGER NOT NULL, PRIMARY KEY(codUser));"
+comando1 = " CREATE TABLE tblUser (codUser INTERGER NOT NULL, name TEXT NOT NULL, phone INTERGER, address TEXT NOT NULL, email TEXT NOT NULL, age INTERGER NOT NULL, PRIMARY KEY(codUser));"
 conector.Cursor.execute(comando1)
 conexao.commit()
 
@@ -14,4 +14,8 @@ conexao.commit()
 
 comando3 = "CREATE TABLE tblCategory (codCategory INTERGER NOT NULL, nameCategory TEXT NOT NULL id: '1' = 'Pedreiro' , id: '2'= 'Gesseiro' , id: '3'= 'Ladrilheiro' , id: '4'= 'Pintor' , id: '5'= 'Armador', PRIMARY KEY(codCategory)); "
 conector.Cursor.execute(comando3)
+conexao.commit()
+
+comando4 = "CREATE TABLE tblServices (codService INTERGER NOT NULL, PRIMARY KEY(codService), FOREIGN KEY (codCategory));"
+conector.Cursor.execute(comando4)
 conexao.commit()
